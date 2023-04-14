@@ -1,0 +1,2 @@
+# e_api_get_master_kobetsu.py
+ｅ支店APIで項目別のマスターデータを取得

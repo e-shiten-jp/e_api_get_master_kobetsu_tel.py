@@ -33,7 +33,7 @@ APIバージョン： v4r3で動作確認
   
   5-2）指定した項目のマスターデータを取得。
   
-        CLMIssueMstKabu    	  銘柄マスタ_株					
+        CLMIssueMstKabu    	    銘柄マスタ_株					
         CLMIssueSizyouMstKabu	銘柄市場マスタ_株					
         CLMIssueMstSak	    	銘柄マスタ_先物					
         CLMIssueMstOp	    	  銘柄マスタ_ＯＰ					

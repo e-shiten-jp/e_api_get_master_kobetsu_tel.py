@@ -28,15 +28,23 @@ APIバージョン： v4r3で動作確認
 ４)実行はコマンドプロンプト等からpython環境で起動してください。
 
 ５）実行内容は、以下になります。
-
+  
   5-1）ログインして仮想URL（request, master, price, event）を取得。
-
+  
   5-2）指定した項目のマスターデータを取得。
-
+  
+        CLMIssueMstKabu    	  銘柄マスタ_株					
+        CLMIssueSizyouMstKabu	銘柄市場マスタ_株					
+        CLMIssueMstSak	    	銘柄マスタ_先物					
+        CLMIssueMstOp	    	  銘柄マスタ_ＯＰ					
+        CLMIssueMstOther   	  日経平均等指数、為替、その他上記外の銘柄コードと名称					
+        CLMOrderErrReason  	  取引所エラー理由コード		
+        CLMDateZyouhou	    	日付情報	
+  
   5-3）csv形式で保存。
-
+  
   5-4）ログアウトを実行。
-
+  
 上記に付随して、送信データや受信データを適宜print()文で出力します。
 
 指数、為替の銘柄コード、銘柄名は、銘柄マスターの個別取得（e_api_get_master_kobetsu.py ）のみで取得できます（sTargetCLMID:'CLMIssueMstOther'と指定）。ストリーミング形式でマスターを一括ダウンロードする e_api_get_master.py では取得できません。

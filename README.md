@@ -33,13 +33,13 @@ APIバージョン： v4r3で動作確認
   
   5-2）指定した項目のマスターデータを取得。
   
-        CLMIssueMstKabu    	    銘柄マスタ_株					
+        CLMIssueMstKabu       銘柄マスタ_株					
         CLMIssueSizyouMstKabu	銘柄市場マスタ_株					
-        CLMIssueMstSak	    	銘柄マスタ_先物					
-        CLMIssueMstOp	    	  銘柄マスタ_ＯＰ					
-        CLMIssueMstOther   	  日経平均等指数、為替、その他上記外の銘柄コードと名称					
-        CLMOrderErrReason  	  取引所エラー理由コード		
-        CLMDateZyouhou	    	日付情報	
+        CLMIssueMstSak        銘柄マスタ_先物					
+        CLMIssueMstOp         銘柄マスタ_ＯＰ					
+        CLMIssueMstOther      日経平均等指数、為替、その他上記外					
+        CLMOrderErrReason     取引所エラー理由コード		
+        CLMDateZyouhou        日付情報	
   
   5-3）csv形式で保存。
   

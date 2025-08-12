@@ -1,38 +1,44 @@
-# e_api_get_master_kobetsu.py
+# e_api_get_master_kobetsu_tel.py
 ｅ支店APIで項目別のマスターデータを取得
-
-ファイル名: e_api_get_master_kobetsu.py
-
-APIバージョン： v4r3で動作確認
 
 ご注意！！ ================================
 
-本番環境に接続した場合、実際に注文を出せます。
-市場で条件が一致して約定した場合、取り消せません。
-十分にご注意いただき、ご利用ください。
+	本番環境に接続した場合、実際に注文が出ます。
+	市場で条件が一致して約定した場合、取り消せません。
+	十分にご注意いただき、ご利用ください。
 
-=========================================
+===========================================
 
-1）動作テストを実行した環境は、os: Centos7.4、python: 3.6.8 です。
+
+
+１）動作テストを実行した環境
+
+	APIバージョン： v4r7
+	python:3.11.2 / os:debian12
 
 ２）事前に立花証券ｅ支店に口座開設が必要です。
-
+  
 ３）利用時に変数を設定してください。
 
-コードの開始部分の「利用時に変数を設定してください」のセクションで、
+      # 取得するマスター項目の選択（コメント'##'を外して指定。選択は1つのみ。）
+      my_sTargetCLMID = 'CLMIssueMstKabu'         # 株式 銘柄マスタ
+      ##my_sTargetCLMID = 'CLMIssueSizyouMstKabu'   # 株式 銘柄市場マスタ
+      ##my_sTargetCLMID = 'CLMIssueMstSak'          # 先物
+      ##my_sTargetCLMID = 'CLMIssueMstOp'           # ＯＰ
+      ##my_sTargetCLMID = 'CLMIssueMstOther'        # 指数、為替、その他
+      ##my_sTargetCLMID = 'CLMOrderErrReason'       # 取引所エラー理由コード
+      ##my_sTargetCLMID = 'CLMDateZyouhou'          # 日付情報
+      # （呼値  呼び値は、個別ダウンロードでは指定不可。）
+  
+４)実行は、設定ファイルや「e_api_login_tel.py」と同じディレクトリで実行してください。
 
-変数、url_base、my_userid等を実際のurl、ご自身のユーザーID、パスワード等に変更してください。
-
-変更しない場合、APIを利用できません。
-
-４)実行はコマンドプロンプト等からpython環境で起動してください。
+  事前に
+ 	「電話認証＋e_api_login_tel.py実行」
+  で、仮想URL（１日券）を取得しておいてください。
 
 ５）実行内容は、以下になります。
-  
-  5-1）ログインして仮想URL（request, master, price, event）を取得。
-  
-  5-2）指定した項目のマスターデータを取得。
-  
+
+  指定した項目のマスターデータを取得。  
         CLMIssueMstKabu       銘柄マスタ_株					
         CLMIssueSizyouMstKabu	銘柄市場マスタ_株					
         CLMIssueMstSak        銘柄マスタ_先物					
@@ -41,13 +47,9 @@ APIバージョン： v4r3で動作確認
         CLMOrderErrReason     取引所エラー理由コード		
         CLMDateZyouhou        日付情報	
   
-  5-3）csv形式で保存。
+  取得結果をcsv形式で保存。
   
-  5-4）ログアウトを実行。
-  
-上記に付随して、送信データや受信データを適宜print()文で出力します。
-
-指数、為替の銘柄コード、銘柄名は、銘柄マスターの個別取得（e_api_get_master_kobetsu.py ）のみで取得できます（sTargetCLMID:'CLMIssueMstOther'と指定）。ストリーミング形式でマスターを一括ダウンロードする e_api_get_master.py では取得できません。
+  指数、為替の銘柄コード、銘柄名は、銘柄マスターの個別取得（e_api_get_master_kobetsu.py ）のみで取得できます（sTargetCLMID:'CLMIssueMstOther'と指定）。ストリーミング形式でマスターを一括ダウンロードする e            _api_get_master.py では取得できません。
 
 ６）取得した文字列に日本語が入った場合、文字コードはshift-jisです（保存データはutf-8になっています。すみません。）。
 

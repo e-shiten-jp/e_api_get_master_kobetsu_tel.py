@@ -49,7 +49,9 @@
   
   取得結果をcsv形式で保存。
   
-  指数、為替の銘柄コード、銘柄名は、銘柄マスターの個別取得（e_api_get_master_kobetsu.py ）のみで取得できます（sTargetCLMID:'CLMIssueMstOther'と指定）。ストリーミング形式でマスターを一括ダウンロードする e            _api_get_master.py では取得できません。
+  	指数、為替の銘柄コード、銘柄名は、銘柄マスターの個別取得（e_api_get_master_kobetsu.py ）のみで取得できます。
+  	（sTargetCLMID:'CLMIssueMstOther'と指定）。
+   	ストリーミング形式でマスターを一括ダウンロードする e_api_get_master.py では取得できません。
 
 ６）取得した文字列に日本語が入った場合、文字コードはshift-jisです（保存データはutf-8になっています。すみません。）。
 
